@@ -1,3 +1,13 @@
-<!-- firehose track 3, lesson 4 - file created 19 may 17 -->
+<!-- firehose track 3, lesson 4 - file created 19 may 17/modified 20 may 17 -->
 
-<h1>Welcome to ET's awesome app</h1>
+<!-- <h1>Welcome to ET's awesome app</h1> -->
+<!-- <h1><%= @places.inspect %></h1> -->
+
+<% @places.each do |place| %>
+    <div>
+        <h1><%= place.name %></h1><br />
+        <i><%= place.address %></i><br />
+        <p><%= place.description %></p><br />
+    </div>
+  <hr />
+<% end %>

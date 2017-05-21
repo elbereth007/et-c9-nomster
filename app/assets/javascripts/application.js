@@ -11,5 +11,10 @@
 // about supported directives.
 //
 //= require rails-ujs
+// next line added 21 may 17
+//= require jquery
 //= require turbolinks
+// next line added 21 may 17
+//= require tether
+//= require bootstrap-sprockets
 //= require_tree .

@@ -62,6 +62,9 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
 
-# next 2 lines added 22 may 17 to use simple form
+# next line added 22 may 17 to use simple form
 gem 'simple_form'
-gem "font-awesome-rails"
+# next line added 22 may 17
+gem 'font-awesome-rails'
+# next line added 22 may 17 to allow for user authentication
+gem 'devise'

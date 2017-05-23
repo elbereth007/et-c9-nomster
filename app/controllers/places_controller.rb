@@ -1,5 +1,8 @@
 # file created 19 may 17
 class PlacesController < ApplicationController
+# next line added 22 may 17
+    before_action :authenticate_user!, only: [:new, :create]
+    
     def index
 # next line added 20 may 17
         @places = Place.all
@@ -11,7 +14,7 @@ class PlacesController < ApplicationController
     end
     
     def create
-        Place.create(place_params)
+        current_user.places.create(place_params)
         redirect_to root_path
     end
     

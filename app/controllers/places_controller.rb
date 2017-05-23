@@ -8,7 +8,7 @@ class PlacesController < ApplicationController
         @places = Place.all
     end
 
-# next 11 lines added 22 may 17
+# next 7 lines added 22 may 17
     def new
         @place = Place.new
     end
@@ -17,7 +17,13 @@ class PlacesController < ApplicationController
         current_user.places.create(place_params)
         redirect_to root_path
     end
+
+# next 3 lines added 23 may 17
+    def show
+        @place = Place.find(params[:id])
+    end
     
+# next 4 lines added 22 may 17
     private
     
     def place_params

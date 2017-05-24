@@ -18,7 +18,7 @@ class PlacesController < ApplicationController
         redirect_to root_path
     end
 
-# next 6 lines added 23 may 17
+# next 16 lines added 23 may 17
     def show
         @place = Place.find(params[:id])
     end
@@ -30,6 +30,12 @@ class PlacesController < ApplicationController
     def update
         @place = Place.find(params[:id])
         @place.update_attributes(place_params)
+        redirect_to root_path
+    end
+    
+    def destroy
+        @place = Place.find(params[:id])
+        @place.destroy
         redirect_to root_path
     end
     

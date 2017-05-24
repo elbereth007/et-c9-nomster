@@ -1,0 +1,15 @@
+<!-- firehose track 3, lesson 22 - file created 23 may 17 -->
+
+<div class="booyah-box col-10 offset-1">
+    <h1>Edit Your Place</h1>
+    <br />
+    <%= simple_form_for @place do |f| %>
+        <%= f.input :name %>
+        <br />
+        <%= f.input :address %>
+        <br />
+        <%= f.input :description %>
+        <br />
+        <%= f.submit 'Update', class: 'btn btn-primary' %>
+    <% end %>
+</div>

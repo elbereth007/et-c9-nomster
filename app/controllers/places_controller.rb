@@ -1,7 +1,7 @@
 # file created 19 may 17
 class PlacesController < ApplicationController
 # next line added 22 may 17, modified 23 may 17
-    before_action :authenticate_user!, only: [:new, :create, :edit]
+    before_action :authenticate_user!, only: [:new, :create, :edit, :update]
     
     def index
 # next line added 20 may 17
@@ -33,6 +33,9 @@ class PlacesController < ApplicationController
     
     def update
         @place = Place.find(params[:id])
+        if @place.user != current_user
+            return render text: 'Not Allowed', status: :forbidden
+        end
         @place.update_attributes(place_params)
         redirect_to root_path
     end

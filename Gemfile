@@ -68,3 +68,9 @@ gem 'simple_form'
 gem 'font-awesome-rails'
 # next line added 22 may 17 to allow for user authentication
 gem 'devise'
+
+# next line added 24 may 17 to use geocoder to convert address to lat/long
+gem "geocoder"
+
+# next line added 24 may 17 to use figaro to securely configure things
+gem "figaro"

@@ -47,3 +47,15 @@ body {
   border-radius: 3px;
   padding: 2px 8px 2px 8px;
 }
+
+// Always set the map height explicitly to define the size of the div element that contains the map.
+#map {
+    height: 300px;
+}
+
+// Optional: Makes the sample page fill the window.
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

@@ -1,4 +1,4 @@
-// firehose track 3, lesson 7 - file created 21 may 17, modified 22 may 17
+// firehose track 3, lesson 7 - file created 21 may 17, modified 22-26 may 17
 
 @import url('https://fonts.googleapis.com/css?family=Righteous');
 @import "bootstrap";
@@ -58,4 +58,9 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+// clears comment page on place details page
+.clear {
+    clear: both;
 }

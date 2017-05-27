@@ -1,4 +1,4 @@
-<!-- firehose track 3, lesson 21 - file created 23 may 17, modified 24-25 may 17 -->
+<!-- firehose track 3, lesson 21 - file created 23 may 17, modified 24-26 may 17 -->
 
 <!-- <h1>Welcome to the show page</h1>  -->
 
@@ -51,7 +51,7 @@
 <div class="clear"></div>
 <%= simple_form_for @comment, url: place_comments_path(@place) do |f| %>
     <%= f.input :message %>
-    <%= f.input :rating %>
+    <%= f.input :rating, as: :select, collection: Comment::RATINGS %> <!-- for dropdown star ratings -->
     <%= f.submit "Add a Comment", class: 'btn btn-primary' %>
 <% end %>
 
@@ -60,8 +60,14 @@
 <% @place.comments.each do |comment| %>
     <div>
         <blockquote>
-            <b><%= comment.rating %></b> -
+<!--            <b><%= comment.rating %></b> -
                 <%= comment.message %>
+            <small><%= comment.user.email %></small>  -->
+<!-- next xx lines added 26 may 17 for star ratings  -->
+            <% if comment.humanized_rating.present? %>
+                <b><%= comment.humanized_rating %></b> -
+            <% end %>
+            <%= comment.message %>
             <small><%= comment.user.email %></small>
         </blockquote>
     </div>

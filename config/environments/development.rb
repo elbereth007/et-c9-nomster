@@ -1,5 +1,20 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
+  
+  # next 10 lines added 28 may 17 (for sending real email)
+  
+  config.action_mailer.delivery_method = :smtp
+
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: "example.com",
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: ENV['GMAIL_ADDRESS'],
+    password: ENV['GMAIL_PASSWORD']
+  }
+  
   # next line added 22 may 17 (host is for Cloud9 IDE, not 'localhost:3030')
   config.action_mailer.default_url_options = { host: 'firehose-elbereth007.c9users.io' }
 

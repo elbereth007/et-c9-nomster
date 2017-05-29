@@ -26,6 +26,7 @@ class PlacesController < ApplicationController
 # next 19 lines added 23 may 17
     def show
         @place = Place.find(params[:id])
+        
 # next line added 26 may 17
         @comment = Comment.new
     end

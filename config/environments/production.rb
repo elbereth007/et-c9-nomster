@@ -2,6 +2,19 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   # next line added 22 may 17
   config.action_mailer.default_url_options = { host: 'nomster-victor-christensen.herokuapp.com' }
+  
+  # next xx lines added 28 may 17; connects SendGrid to live nomster app on heroku.
+  # these lines in production.rb, not environment.rb, so only affects production
+  #  environment and not development, too.
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.sendgrid.net',
+    port: '587',                        # smtp port
+    authentication: :plain,
+    user_name: ENV['SENDGRID_USERNAME'],
+    password: ENV['SENDGRID_PASSWORD'],
+    domain: 'heroku.com',
+    enable_starttls_auto: true
+  }
 
   # Code is not reloaded between requests.
   config.cache_classes = true

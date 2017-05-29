@@ -3,6 +3,9 @@ class Comment < ApplicationRecord
     belongs_to :user
     belongs_to :place
     
+# next line added 28 may 17 - for triggering email notification after comment created
+    after_create :send_comment_email
+    
 # next 10 lines added 26 may 17 - to add dropdown for star ratings
     RATINGS = {
         'one star': '1_star',
@@ -14,5 +17,10 @@ class Comment < ApplicationRecord
     
     def humanized_rating
         RATINGS.invert[self.rating]
+    end
+
+# next 3 lines added 28 may 17 - for triggering email notification after comment created
+    def send_comment_email
+        NotificationMailer.comment_added(self).deliver
     end
 end

@@ -8,4 +8,6 @@ Rails.application.routes.draw do
  # next 2 lines added 26 may 17
     resources :comments, only: :create
   end
+  # next  lines added 29 may 17 for user show page
+  resources :users, only: :show
 end

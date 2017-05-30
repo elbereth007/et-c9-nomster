@@ -2,5 +2,6 @@
 
 class UsersController < ApplicationController
     def show
+        @user = User.find(params[:id])  # load user info from database for user w/id passed
     end
 end

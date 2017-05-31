@@ -74,3 +74,6 @@ gem "geocoder"
 
 # next line added 24 may 17 to use figaro to securely configure things
 gem "figaro"
+
+# next line added 30 may 17 to use will_paginate (lesson/challenge 12)
+gem "will_paginate"

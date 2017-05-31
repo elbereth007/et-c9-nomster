@@ -4,8 +4,8 @@ class PlacesController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
     
     def index
-# next line added 20 may 17
-        @places = Place.all
+# next line added 20 may 17, modified to paginate 30 may 17 (challenge/lesson 12) using will_paginate
+        @places = Place.paginate(:page => params[:page], :per_page => 10)
     end
 
 # next 7 lines added 22 may 17

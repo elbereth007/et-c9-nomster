@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
 # next line added 22 may 17
   has_many :places
+  
 # next line added 26 may 17
   has_many :comments
+  
 end

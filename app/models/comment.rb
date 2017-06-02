@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 # next line added 28 may 17 - for triggering email notification after comment created
     after_create :send_comment_email
     
-# next 10 lines added 26 may 17 - to add dropdown for star ratings
+# next 10 lines added 26 may 17 - for dropdown for star ratings
     RATINGS = {
         'one star': '1_star',
         'two stars': '2_stars',

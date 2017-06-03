@@ -77,3 +77,6 @@ gem "figaro"
 
 # next line added 30 may 17 to use will_paginate (lesson/challenge 12)
 gem "will_paginate"
+
+# next line added 2 jun 17 to use carrierwave (lesson/challenge 39)
+gem "carrierwave"

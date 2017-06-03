@@ -1,6 +1,7 @@
 # firehose track 3, lesson 39 (challenge) - file created 1 jun 17
 
 class PhotosController < ApplicationController
+    before_action :authenticate_user!
     
     def create
         @place = Place.find(params[:place_id])

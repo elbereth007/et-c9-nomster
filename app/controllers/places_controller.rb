@@ -29,6 +29,9 @@ class PlacesController < ApplicationController
         
 # next line added 26 may 17
         @comment = Comment.new
+
+# next line added 3 jun 17 for lesson 39 (challenge)
+        @photo = Photo.new
     end
     
     def edit

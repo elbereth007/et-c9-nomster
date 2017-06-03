@@ -159,3 +159,9 @@
         Add a photo
     </button>
 </div>
+
+<!-- next 4 lines added 3 jun 17 for displaying photos - lesson 39 (challenge) -->
+<% @place.photos.each do |photo| %>
+    <%= image_tag photo.picture %>
+    <%= photo.caption %>
+<% end %>

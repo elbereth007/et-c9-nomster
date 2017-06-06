@@ -5,7 +5,7 @@ class PhotosController < ApplicationController
     
     def create
         @place = Place.find(params[:place_id])
-        byebug  # stops execution, shows state
+#        byebug                                  # stops execution, shows state
         @place.photos.create(photo_params)
 #        @place.photos.create(photo_params.merge(user: current_user))
         redirect_to place_path(@place)

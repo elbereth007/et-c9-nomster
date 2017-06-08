@@ -3,21 +3,19 @@
 <!-- <h1>Welcome to the show page</h1>  -->
 
 <div class="booyah-box col-10 offset-1">
-    <h1><%= @place.name %></h1>
-    <i><%= @place.address %></i>
+    <h1><%= @place.name %></h1>         <!-- display name -->
+    <i><%= @place.address %></i>        <!-- display address -->
     <br/><br/>
-    <p><%= @place.description %></p>
+    <p><%= @place.description %></p>    <!-- display description -->
 
-    <% if @place.latitude.present? && @place.longitude.present? %>
+    <% if @place.latitude.present? && @place.longitude.present? %>     <!-- display map is coords exist -->
 
         <script>
         
         function initMap() {
-<!--          var myLatLng = {lat: -25.363, lng: 131.044};  -->
             var myLatLng = {lat: <%= @place.latitude %>, lng: <%= @place.longitude %>};
             
             var map = new google.maps.Map(document.getElementById('map'), {
-<!--              zoom: 4,  -->
                 zoom: 12,
                 center: myLatLng
             });
@@ -129,8 +127,14 @@
 <div class="float-right">
     <% if current_user && current_user == @place.user %>     <!-- so only place creator can add photos -->
     
-<!--  add way to destroy photo, by user only -->
-<!--    <% end %>  -->
+<!-- Button trigger modal for photos -->
+        <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
+            Add a photo
+        </button>
+
+<!-- add method so only place creator can destroy photos -->
+
+    <% end %>
     
 <!-- </div>  -->
       
@@ -167,10 +171,6 @@
     
     <h1 class="float-left">Photos</h1>
 
-<!-- Button trigger modal for photos -->
-    <button type="button" class="btn btn-primary btn-lg float-right" data-toggle="modal" data-target="#photoModal">
-        Add a photo
-    </button>
 </div>
 
 

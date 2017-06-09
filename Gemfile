@@ -80,3 +80,6 @@ gem "will_paginate"
 
 # next line added 2 jun 17 to use carrierwave (lesson/challenge 39)
 gem "carrierwave"
+
+# next line added 8 jun 17 so carrierwave can communicate with amazon s3
+gem "fog-aws"

@@ -67,17 +67,11 @@
             </div>
         <% end %>
 
-<!-- next 8 lines added 9 jun 17 - shows last photo from each place on homepage -->
+<!-- next 3 lines added 9-11 jun 17 for showing first photo from each place on homepage (part of fine tuning) -->
         <% if place.photos.present? %>       <!-- checks if photos exist, so no error  -->
-            <div class="col-12">
-                <blockquote>      <!-- show photos for each place -->
-                    <% @place.photos.each do |photo| %>
-                        <%= image_tag photo.picture %>
-                        <%= photo.caption %>
-                    <% end %>
-                </blockquote>
-            </div>
+          <%= image_tag place.photos.first.picture %>
         <% end %>
+
     </div>
 <!--  <hr />  -->
 <% end %>
